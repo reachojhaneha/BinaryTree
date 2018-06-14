@@ -6,37 +6,47 @@ public class Node {
 	private Node leftChild;
 	private Node rightChild;
 	
+	public Node getleftChild() {
+		return leftChild;
+	}
+	public Node getrightChild() {
+		return rightChild;
+	}
+	public int getdata() {
+		return data;
+	}
+	
 	Node(int key){
 		this.data = key;
 		leftChild = null;
 		rightChild = null;
 	}
 	
-	public void rootNode(Node root) {
+	/*public static rootNode(Node root) {
 		Node fisrtNode = root;
 		//int key = value;
 		//fisrtNode.data = key;
 		fisrtNode.leftChild = null;
 		fisrtNode.rightChild = null;
 		
-	}
+	}*/
 	
-	public void insertNode(Node root, Node value) {
+	public void insertNode(Node value) {
 		Node currentNode = value;
-		Node rootNode = root;
-		if (currentNode.data < rootNode.data) {
-			if(rootNode.leftChild == null) {
-				rootNode.leftChild = currentNode;
-			}else if(rootNode.leftChild != null){
-				insertNode(rootNode.leftChild, currentNode);
+		//Node root = new Node(getroot());
+		if (currentNode.data < data) {
+			if(leftChild == null) {
+				leftChild = currentNode;
+			}else if(leftChild != null){
+				leftChild.insertNode(currentNode);
 			}
-		}else if(currentNode.data > rootNode.data) {
-			if(rootNode.rightChild == null) {
-				rootNode.rightChild = currentNode;
-			}else if(rootNode.rightChild != null){
-				insertNode(rootNode.rightChild, currentNode);
+		}else if(currentNode.data > data) {
+			if(rightChild == null) {
+				rightChild = currentNode;
+			}else if(rightChild != null){
+				rightChild.insertNode(currentNode);
 			}
-		}else if(currentNode.data == rootNode.data) {
+		}else if(currentNode.data == data) {
 			System.out.println("Same Node");
 		}
 		

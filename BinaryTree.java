@@ -1,37 +1,40 @@
 package stringsJava;
 
-public class BinaryTree {
+public class BinaryTree{
 
 	private static Node root;
+	
+	public Node getroot() {
+		return root;
+	}
 
-	public void traverseInorder(Node root) {
-		Node firstNode = root;
+	public static void traverseInorder(Node root) {
+		Node firstNode =  root;
 
-		if (firstNode.leftChild == null) {
-			System.out.println(firstNode.leftChild.data);
+		if (firstNode != null) {
+		
+		Node leftChild = firstNode.getleftChild();
+		traverseInorder(leftChild);
+		System.out.println(firstNode.getdata());
+		Node rightChild = firstNode.getrightChild(); 
+	    traverseInorder(rightChild);
+		
 		}
-		if (firstNode.rightChild == null) {
-			System.out.println(firstChild.rightChild.data);
-		}
-		Node leftChild = traverseInorder(firstNode.leftChild);
-		traverseInorder(firstNode);
-		Node rightChild = traverseInorder(firstNode.rightChild);
-
 	}
 
 	public static void main(String[] args) {
-		Node node1 = new Node(10);
-		Node.rootNode(node1);
+		Node root = new Node(10);
+		//Node.rootNode(node1);
 		Node node2 = new Node(12);
 		Node node3 = new Node(8);
 		Node node4 = new Node(20);
 		Node node5 = new Node(5);
 
-		Node.insertNode(node2);
-		Node.insertNode(node3);
-		Node.insertNode(node4);
-		Node.insertNode(node5);
-
+		root.insertNode(node2);
+		root.insertNode(node3);
+		root.insertNode(node4);
+		root.insertNode(node5);
+		traverseInorder(root);
 	}
 
 }
