@@ -5,10 +5,10 @@ import java.util.Queue;
 
 public class BreadthFirsttree {
 
-	public BreadthFirsttree() {
+	/*public BreadthFirsttree() {
 		BinaryTree b1 = new BinaryTree();
 		Node BreadthNode = b1.getroot();
-	}
+	}*/
 
 	Queue<Node> q1 = new LinkedList<Node>();
 
