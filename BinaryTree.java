@@ -46,6 +46,7 @@ public class BinaryTree{
 	
 
 	public static void main(String[] args) {
+		BreadthFirsttree b1 = new BreadthFirsttree();
 		Node root = new Node(10);
 		//Node.rootNode(node1);
 		Node node2 = new Node(12);
@@ -67,6 +68,8 @@ public class BinaryTree{
 		traversePreorder(root);
 		System.out.println("============================");
 		traversePostorder(root);
+		System.out.println("============================");
+		b1.bfs(root);
 	}
 
 }
