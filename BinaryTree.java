@@ -5,6 +5,7 @@ public class BinaryTree{
 	private static Node root;
 	
 	public Node getroot() {
+//getting node
 		return root;
 	}
 
